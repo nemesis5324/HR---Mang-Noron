@@ -1,0 +1,47 @@
+[System]
+Name='DKHD_CH29a_3_1_F'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=5
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='et'
+Range=[0 22]
+NumMFs=5
+MF1='D1':'trapmf',[0 0 3.674 7.326]
+MF2='D2':'trimf',[3.674 7.326 11]
+MF3='D3':'trimf',[7.326 11 14.67]
+MF4='D4':'trimf',[11 14.67 18.33]
+MF5='D5':'trapmf',[14.67 18.33 22 22]
+
+[Input2]
+Name='t2'
+Range=[25 40]
+NumMFs=3
+MF1='AM':'trapmf',[25 25 28.75 32.5]
+MF2='O':'trimf',[30.63 32.5 34.38]
+MF3='D':'trapmf',[32.5 36.25 40 40]
+
+[Output1]
+Name='cs'
+Range=[100 2000]
+NumMFs=5
+MF1='DN2':'trapmf',[100 100 575 813.2]
+MF2='DN1':'trimf',[575 813.2 1050]
+MF3='DM':'trimf',[813.2 1050 1288]
+MF4='DP1':'trimf',[1050 1288 1525]
+MF5='DP2':'trapmf',[1288 1525 2000 2000]
+
+[Rules]
+1 0, 1 (1) : 1
+2 0, 2 (1) : 1
+3 0, 3 (1) : 1
+4 0, 4 (1) : 1
+5 0, 5 (1) : 1

@@ -1,0 +1,41 @@
+[System]
+Name='DKHD_CH29a_2_1_F'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=3
+AndMethod='prod'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='input1'
+Range=[-5 20]
+NumMFs=3
+MF1='mA1':'gaussmf',[2 2]
+MF2='mA2':'gaussmf',[2 7]
+MF3='mA3':'gaussmf',[2 12]
+
+[Input2]
+Name='input2'
+Range=[-5 20]
+NumMFs=3
+MF1='mB1':'gaussmf',[1.5 5]
+MF2='mB2':'gaussmf',[1.5 10]
+MF3='mB3':'gaussmf',[1.5 15]
+
+[Output1]
+Name='output1'
+Range=[-5 20]
+NumMFs=3
+MF1='mC1':'trapmf',[-3 -1 1 3]
+MF2='mC2':'trimf',[1 4 7]
+MF3='mC3':'trapmf',[5 7 9 11]
+
+[Rules]
+1 1, 1 (1) : 1
+2 2, 2 (1) : 1
+3 3, 3 (1) : 1
